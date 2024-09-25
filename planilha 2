@@ -1,0 +1,50 @@
+PROBLEMA UM: Crie uma Tabela que calcule pela fórmula o Rendimento de um Investimento.				
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+    Console.WriteLine("Digite o valor atual: ");
+    decimal valor_atual= Convert.ToDecimal(Console.ReadLine());
+    Console.WriteLine("Digite a taxa de juros: ");
+    decimal taxa_juros= Convert.ToDecimal(Console.ReadLine())/100;
+    Console.WriteLine("Informe o período em meses: ");
+    int meses= Convert.ToInt32(Console.ReadLine());
+    decimal valor_futuro= valor_atual * (decimal)Math.Pow((double)(1 + taxa_juros), meses);
+    Decimal rendimento= valor_futuro -  valor_atual;
+    Console.WriteLine("\n Resultados: ");
+    Console.WriteLine("Valor atual: " + valor_atual.ToString("N2"));
+    Console.WriteLine("Período em meses: " + meses);
+    Console.WriteLine("Taxa de juros: " + (taxa_juros * 100).ToString("N2"));
+    Console.WriteLine("Valor futuro: " + valor_futuro.ToString ("N2"));
+    Console.WriteLine("Rendimento: " + rendimento.ToString ("N2"));
+    }
+}   
+PROBLEMA DOIS: Crie uma Tabela para 6 meses, taxa a.m. Rendimento para cada mês e mostrar todos os meses					
+
+class Program
+{
+    static void Main()
+    {
+        decimal valorPresente = 3800m; 
+        decimal taxaJuros = 1.25m / 100;  mes
+        int meses = 6; 
+
+        Console.WriteLine("Mês\tTaxa Juros (%)\tRendimento\tRend. Líquido\tRenda Acumulada");
+        Console.WriteLine("---------------------------------------------------------------");
+
+        decimal rendaAcumulada = valorPresente;
+
+        for (int mes = 1; mes <= meses; mes++)
+        {
+            decimal rendimento = rendaAcumulada * taxaJuros;
+            rendaAcumulada += rendimento; 
+
+        
+            Console.WriteLine($"{mes, -3}\t{taxaJuros * 100, -15:F2}\t{rendimento, -16:F2}\t{rendimento, -19:F2}\t{rendaAcumulada, -21:F2}");
+        }
+    }
+}
+
